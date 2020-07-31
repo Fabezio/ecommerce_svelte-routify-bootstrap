@@ -2,11 +2,12 @@
     "name": "svelte-app",
     "version": "1.0.0",
     "scripts": {
+        "dev": "rollup -c -w",
         "build": "rollup -c",
-        "dev": "run-p watch:routify watch:rollup",
-        "start": "sirv public",
-        "watch:rollup": "rollup -c -w",
-        "watch:routify": "routify"
+        "start": "sirv public --single",
+        "__dev": "run-p watch:routify watch:rollup",
+        "__watch:rollup": "rollup -c -w",
+        "__watch:routify": "routify"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^12.0.0",
