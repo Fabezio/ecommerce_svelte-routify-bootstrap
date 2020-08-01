@@ -2,7 +2,7 @@
     import Header from '../components/UI/Header.svelte'
 </script>
 
-<Header pagetitle='Accueil' subtitle='Salut tout le monde!' />
+<Header pagetitle='A propos' subtitle='quelques infos utiles' />
 <div class="container">
-    
+
 </div>

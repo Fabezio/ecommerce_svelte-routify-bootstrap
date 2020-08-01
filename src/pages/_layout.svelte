@@ -1,15 +1,29 @@
 <script>
 	// import Navbar from './../components/UI/Navbar.svelte';
-    import {url} from '@sveltech/routify'
+    import {url, isActive} from '@sveltech/routify'
     import Navbar from '../components/UI/Navbar.svelte'
+import { pathToParams } from '@sveltech/routify/lib/utils'
+const links = [
+  ['.', 'accueil'],
+  ['./about', 'a propos']
+]
     // let navbarCollapse = false
     // let showDropdown = false
 </script>
 <div>
-    <Navbar  >
+    <Navbar >
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+          {#each links as [path, name]}
+            
+            <li class="nav-item" on:select={$isActive(path)} >
               <!-- svelte-ignore a11y-invalid-attribute -->
+              <a class="nav-link" href={$url(path)}>{name}<span class="sr-only">(current)</span></a>
+            </li>
+            {/each}
+<!--
+
+           <li class="nav-item active">
+              
               <a class="nav-link" href={url}>Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -29,8 +43,10 @@
             <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
+--> 
           </ul>
     </Navbar>
+    <slot />
     
     
 </div>
