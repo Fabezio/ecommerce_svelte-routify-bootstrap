@@ -1,7 +1,9 @@
 <script>
-	import { Router } from '@sveltech/routify'
+	import { Router, route } from '@sveltech/routify'
 	import { routes } from '@sveltech/routify/tmp/routes'
 	// export let name;
+
+$:console.log(routes)
 </script>
 
 <main>

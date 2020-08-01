@@ -5,7 +5,8 @@
 import { pathToParams } from '@sveltech/routify/lib/utils'
 const links = [
   ['.', 'accueil'],
-  ['./about', 'a propos']
+  ['./about', 'a propos'],
+  ['./blog', 'blog']
 ]
     // let navbarCollapse = false
     // let showDropdown = false
